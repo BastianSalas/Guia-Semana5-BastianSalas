@@ -6,9 +6,13 @@ public class funciones {
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     public static int num() {
-        System.out.print("Ingrese un número que no contenga el dígito cero: ");
+        System.out.print("Ingrese un número entero: ");
+        while (!scanner.hasNextInt()) {
+            System.out.println("Ingrese un número entero válido.");
+            scanner.next(); // Limpiar el buffer del scanner
+        }
         int numero = scanner.nextInt();
-        return numero; 
+        return numero;
     }
  
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -49,13 +53,65 @@ public class funciones {
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+    public static int num1() {
+        System.out.print("Ingrese un número entero: ");
+        while (!scanner.hasNextInt()) {
+            System.out.println("Ingrese un número entero válido.");
+            scanner.next(); // Limpiar el buffer del scanner
+        }
+        int numero1 = scanner.nextInt();
+        return numero1;
+    }
+
+    public static int num2() {
+        System.out.print("Ingrese un número entero: ");
+        while (!scanner.hasNextInt()) {
+            System.out.println("Ingrese un número entero válido.");
+            scanner.next(); // Limpiar el buffer del scanner
+        }
+        int numero2 = scanner.nextInt();
+        return numero2;
+    }
+
+    public static int MinimoComunDivisor(int numero1, int numero2) {
+
+        int a = Math.max(numero1, numero2);
+        int b = Math.min(numero1, numero2);
+
+        int resultado = 0;
+        do {
+
+            resultado = b;
+            b = a % b;
+            a = resultado;
+
+        } while (b != 0);
+
+        return resultado;
+
+    }
+
     public static void MCD() {
 
+        int numero1 = num1();
+        int numero2 = num1();
+
+        int minimo_comun_divisor = MinimoComunDivisor(numero1, numero2);
+        System.out.println("El máximo común divisor entre el número " + numero1 + " y el número " + numero2 + " es: " + minimo_comun_divisor);
     
     }
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////    
 
     public static void InvertirCadena() {
 
     
     }
+
+    public static void Invertir() {
+
+    
+    }
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////  
 }

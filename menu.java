@@ -35,12 +35,13 @@ public class menu {
                     break;
                 
                 case 4:
-                    funciones.InvertirCadena();
+                    funciones.Invertir();
                     break;
 
                 case 5:
                     System.out.println("Fin del programa.");
                     break;
+                    
                 default:
                     System.out.println("Opción no válida. Por favor, ingrese una opción válida (1-5).");
             }
