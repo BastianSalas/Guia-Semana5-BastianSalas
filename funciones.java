@@ -9,7 +9,7 @@ public class funciones {
         System.out.print("Ingrese un número entero: ");
         while (!scanner.hasNextInt()) {
             System.out.println("Ingrese un número entero válido.");
-            scanner.next(); // Limpiar el buffer del scanner
+            scanner.next(); // Limpia el buffer del scanner
         }
         int numero = scanner.nextInt();
         return numero;
@@ -57,7 +57,7 @@ public class funciones {
         System.out.print("Ingrese un número entero: ");
         while (!scanner.hasNextInt()) {
             System.out.println("Ingrese un número entero válido.");
-            scanner.next(); // Limpiar el buffer del scanner
+            scanner.next(); // Limpia el buffer del scanner
         }
         int numero1 = scanner.nextInt();
         return numero1;
@@ -67,7 +67,7 @@ public class funciones {
         System.out.print("Ingrese un número entero: ");
         while (!scanner.hasNextInt()) {
             System.out.println("Ingrese un número entero válido.");
-            scanner.next(); // Limpiar el buffer del scanner
+            scanner.next(); // Limpia el buffer del scanner
         }
         int numero2 = scanner.nextInt();
         return numero2;
@@ -103,14 +103,22 @@ public class funciones {
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////    
 
-    public static void InvertirCadena() {
-
+    public static String InvertirCadena(String cadena) {
+        
+        if (cadena.isEmpty()) {
+            return cadena;
+        }
+        return InvertirCadena(cadena.substring(1)) + cadena.charAt(0);
     
     }
 
     public static void Invertir() {
 
-    
+        System.out.print("Ingrese una cadena: ");
+        String cadena = scanner.next();
+        String cadenaInvertida = InvertirCadena(cadena);
+        System.out.println("Cadena invertida: " + cadenaInvertida);
+
     }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////  
